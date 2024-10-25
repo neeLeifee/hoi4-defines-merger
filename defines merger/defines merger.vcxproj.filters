@@ -19,4 +19,15 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="defines_base.lua">
+      <Filter>Исходные файлы</Filter>
+    </None>
+    <None Include="defines_from.lua">
+      <Filter>Исходные файлы</Filter>
+    </None>
+    <None Include="defines_output.lua">
+      <Filter>Исходные файлы</Filter>
+    </None>
+  </ItemGroup>
 </Project>

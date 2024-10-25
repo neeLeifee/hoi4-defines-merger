@@ -129,6 +129,11 @@
   <ItemGroup>
     <ClCompile Include="defines merger.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="defines_base.lua" />
+    <None Include="defines_from.lua" />
+    <None Include="defines_output.lua" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
