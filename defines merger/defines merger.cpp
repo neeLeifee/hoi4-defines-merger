@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <fstream>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
 
@@ -17,7 +17,7 @@ using namespace std;
 */
 
 
-map<string, string> convert_define_txt(string adress) {
+unordered_map<string, string> convert_define_txt(string adress) {
     /*
     * func gets file adress,
     * returns map<define, define_value(and its comment)>
@@ -29,7 +29,7 @@ map<string, string> convert_define_txt(string adress) {
     string define = "";
     string define_value = "";
 
-    map<string, string> return_defines;
+    unordered_map<string, string> return_defines;
 
     if (file_defines.is_open()) {
 
@@ -56,9 +56,9 @@ map<string, string> convert_define_txt(string adress) {
 
 
 int main() {
-    map<string, string> defines_base = convert_define_txt("defines_base.lua");
+    unordered_map<string, string> defines_base = convert_define_txt("defines_base.lua");
 
-    map<string, string> defines_from = convert_define_txt("defines_from.lua");
+    unordered_map<string, string> defines_from = convert_define_txt("defines_from.lua");
 
     ofstream defines_txt("defines_output.lua");
 
@@ -73,7 +73,7 @@ int main() {
             }
             else {
                 defines_txt << pair1.first << " = " << pair2.second << endl;
-                defines_txt << "-- previously was '" << pair1.first << " = " << pair1.second << "'. This change was made by Leifee's HOI4 define merger." << endl;
+                defines_txt << "            -- previously was '" << pair1.first << " = " << pair1.second << "'. This change was made by Leifee's HOI4 define merger." << endl;
             }
 
         }
